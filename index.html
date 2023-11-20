@@ -425,6 +425,40 @@
       </div>
     </section>
 
+    <section class="section" style="background-color:#efeff081" id="examples">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Captioning and Conversation Examples</h2>
+        </div>
+      </div>
+      <div class="container mt-5">
+        <div class="form-row" style="justify-content: flex-end;">
+          <div class="form-group col-md-1">
+            <div class="col-md-2" style="width: 100%"><label>&nbsp;</label></div>
+            <div class="btn-group" role="group" aria-label="Left and Right Controller"
+              style="width: 100%;align-items: flex-end;justify-content: center;flex-direction: row;display: flex;">
+              <button type="button" class="form-control btn btn-primary" id="prev-question"><i class="material-icons">keyboard_arrow_left</i></button>
+              <button type="button" class="form-control btn btn-primary" id="next-question"><i class="material-icons">keyboard_arrow_right</i></button>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <div class="card mb-4" style="width: 100%; display: flex; align-items: center;">
+            <div class="card-body" id="selected-question" style="display: flex; height: 80vh;">
+              <div class="chat-history">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background-color:#efeff081" id="demo">
+      <div class="container is-max-desktop" id="gradio">
+        <!-- <gradio-app src="https://llava.hliu.cc"></gradio-app> TODO -->
+      </div>
+    </section>
+
     <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
@@ -433,12 +467,6 @@
 
           }
       </code></pre>
-      </div>
-    </section>
-
-    <section class="section"  style="background-color:#efeff081">
-      <div class="container is-max-desktop" id="gradio">
-        <!-- <gradio-app src="https://llava.hliu.cc"></gradio-app> TODO -->
       </div>
     </section>
 
@@ -494,7 +522,6 @@
         para.appendChild(br);
         para.appendChild(pre_text);
 
-        // Add image if imageSrc is provided
         if (imageSrc) {
           var img = document.createElement("img");
           img.src = imageSrc;
@@ -525,7 +552,6 @@
         chatHistory.innerHTML = "";
       }
 
-      // 
       const conversations = [
         {
           "description": "monalisa",
@@ -605,12 +631,9 @@
         },
       ];
 
-      // The current image index
       let currentIndex = 0;
 
-      // The function to update the displayed chat history
       function update_dialog_demo() {
-        // Clear the chat history
         clearChatHistory();
 
         for (let i = 0; i < conversations[currentIndex].turns.length; i++) {
@@ -622,7 +645,6 @@
           }
         }
 
-        // scroll to the top of the chat history
         document.querySelector('.chat-history').scrollTop = 0;
       }
 
