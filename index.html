@@ -160,7 +160,7 @@
                     </a>
                   </span>
                   <span class="link-block">
-                    <a href="https://github.com/InternLM/InternLM-XComposer" target="_blank"
+                    <a href="https://github.com/InternLM/InternLM-XComposer/tree/main/projects/ShareGPT4V" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fab fa-github"></i>
@@ -498,7 +498,8 @@
         span.className = "icon is-large";
 
         var icon = document.createElement("i");
-        icon.className = "fas fas fa-2x" + (sender === "User" ? " fa-user " : sender === "LLaVA" ? " fa-robot" : "");
+        
+        icon.className = "fas fas fa-2x" + (sender === "User" ? " fa-user " :" fa-robot");
 
         var media = document.createElement("div");
         media.className = "media-content";
@@ -604,7 +605,7 @@
         {
           "description": "analysis",
           "turns": [
-            ["User", "", "images/examples/conv_case_2.PNG"],
+            ["User", "", "images/examples/conv_case_2.png"],
             ["User", "From a photography perspective, analyze what makes this picture beautiful?"],
             ["ShareGPT4V-7B",
               " From a photography perspective, the image is beautiful due to the combination of elements and the play of light and shadow." +
